@@ -1,0 +1,42 @@
+<html>
+ <head>
+  <title>Welcome to Blog</title>
+<style type="text/css">
+body{background-color:blue;}
+#header_text{text-align:center;}
+#header{text-align:right;}
+#form_input{text-align:right;}
+a{color:black;}
+#form_result a{color:white;}
+#form_result{text-align:center;background-color:black;color:white;
+margin:0 100px 0 100px}
+</style>
+ </head>
+ <body>
+<div id="header">
+ <span id="header_text"><h1>Welcome to the Site</h1></span>
+ <form action="" method="POST">{% csrf_token %}
+  {% if not logged_in %}
+   
+ <span id="in">Name: <input type="text" name="name" /></span>         </br></br>
+ <span id="in_ps">Pass: <input type="text" name="pass" /></span>                       </br></br>
+ <input type="submit" value="log in">
+ </br></br>
+ <a href="">Or register here !!! </a>
+{% else %}
+ <h3>Hello {{session_name}}</h3>
+ <input type="submit" name="log_out" value="log out" />
+{% endif %}
+   </form>
+ <a href="input">Click here to post a blog</a>
+</div>
+</br>
+<div id="form_result">
+ </br></br>
+ {% for n,blog_id in msg %} 
+ <a href="view?id={{blog_id|}}">{{n }}</a></br></br>
+{% endfor %}
+</br></br></br>
+</div>
+ </body>
+</html>

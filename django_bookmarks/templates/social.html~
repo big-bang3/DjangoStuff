@@ -1,0 +1,42 @@
+<html>
+<head>
+<script type="text/javascript">
+function validate_form(data)
+{
+ if(data["name"].value=="")
+ { alert("enter username");
+   document.getElementById("wrong_name").innerHTML="<strong>Left username blank </strong>";
+ return false;
+ }
+ else if(data["pass_word"].value=="")
+ {alert("enter password u ");
+  document.getElementById("wrong_pass").innerHTML="<strong>Left password blank</strong>";
+ return false;
+ }
+ else
+ data.submit();
+}
+</script>
+<title>Social Site</title>
+Welcome to the site</br></br>
+</head>
+<body>
+<form action="" method="POST">{% csrf_token %}
+{% if person %}
+ You have logged in {{ person }} with visited val {{ val }}
+ <input type="submit" name="log out" value="log out"/>
+{% else %}
+
+ <label for="name">Enter your name</label>
+ <input type="text" name="name" value="" />
+ </br></br>
+ <label for="pass_word">Enter your pass</label>
+ <input type="text" name="pass_word" value="" />
+ </br></br>
+ <input type="Button" value="submit" onclick="validate_form(this.form);" />
+ </form>
+ <div id="wrong_name"></div></br></br>
+ <div id="wrong_pass"></div>
+{% endif %}
+</body>
+</html>

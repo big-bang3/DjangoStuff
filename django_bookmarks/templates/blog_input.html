@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+{% if allowed%}
+<head>
+    <style type="text/css">
+      body{background-color:blue;text-align:center;}  
+      #form_input{background-color:black;color:white;margin:0 100px 0 100px;}
+    </style>
+    <title>Post Blog</title>
+</head>
+<body>
+    <h2>Post your blog here !!!</h2>
+    <!-- Insert your content here -->
+    </br>
+<div id="form_input">
+</br>
+<form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+Your Title :</br><input type="text" name="name" />
+</br></br></br>
+Write here : </br><textarea name="msg" rows='30' cols='100' ></textarea></br>
+</br></br>
+<input type="submit" name="submit" />
+</br>
+</form>
+</br></br></br></br></br></br>
+</div>
+</body>
+{% else %}
+Please Log in To Continue
+{% endif %}
+</html>

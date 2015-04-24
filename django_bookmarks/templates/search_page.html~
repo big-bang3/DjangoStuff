@@ -1,0 +1,15 @@
+<html>
+<head><title>Search{% if results %}Result{% endif %}</title>
+</head>
+<body><h1>Hi buddy.Searchin anythin?</h1>
+<form action="." method=GET>
+<label for="q">Search</label>
+<input type="text" name="q" value={{ query|escape }}>
+<input type="submit" value="search" >
+{% if results %}
+Following are your search results
+ {% for name in results %}
+</br>
+  {{ name }}
+ {% endfor %}
+{% endif %}

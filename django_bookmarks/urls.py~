@@ -1,0 +1,20 @@
+from django.conf.urls import patterns, include, url
+from django.contrib import admin
+from bookmarks.views import *
+from social.views import *
+urlpatterns = patterns('',
+#(r'^(\w+)$',main_page),
+#(r'^$',main_page2),
+(r'^search/',search_req)
+    # Examples:
+    # url(r'^$', 'django_bookmarks.views.home', name='home'),
+    # url(r'^blog/', include('blog.urls')),
+
+   ,url(r'^admin/', include(admin.site.urls)) 
+   ,url(r'^form/',input_req)
+
+
+
+
+,)
+

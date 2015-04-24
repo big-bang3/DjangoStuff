@@ -1,0 +1,42 @@
+#jum,.jumbotron{
+	background-color: #E3DEE3;
+}
+body{
+
+	background-color: #E3DEE3;}
+.mytry{
+	background-color: #F7E2B0;
+
+}
+.panel,.panel-heading{
+	background-color: #9983F2;
+}
+#b1{
+
+	border:2px solid ;
+	height:auto;
+	border-radius:5px;
+	max-height:500px;
+	overflow:auto;
+	box-shadow:2px 2px 2px 2px   ;
+	padding: 20px;
+	margin-top: 6px;
+
+}
+#ch_name{
+	padding:9px;
+
+}
+#b2{
+	height:auto;
+	max-height: 300px;
+	overflow:auto;
+
+}
+.abcd{
+
+	line-height: 1.428571429;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-weight: 500;
+	font-size : 20px;
+}

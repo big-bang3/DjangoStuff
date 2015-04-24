@@ -1,0 +1,35 @@
+<html ng-app='myapp'>
+	
+	<head>
+		<title>Angular App</title>
+		<script src="../../static/angular.min.js"></script>
+		
+	</head>
+	<body>
+		
+	
+			<input type="button" value="toggle">
+			<input type = "text" ng-model = "fil_val" name="abc">
+		<div ng-controller='set2'>
+			<div ng-repeat="x in names | filter:fil_val">
+				{{ working }}
+				<span ng-bind="aj"></span>
+			</div>
+		</div>
+
+
+		<script>
+			var MyApp = angular.module('myapp', []);
+			MyApp.controller('set2',function set2($scope,$http){ 
+  			function call_req(){$http.get(window.location.href).success(
+                    function(data,status,headers,config){ $scope.aj="dss";}
+                    );}
+  setInterval(call_req,3000);
+
+})
+	
+		</script>
+		
+	
+	</body>
+</html>

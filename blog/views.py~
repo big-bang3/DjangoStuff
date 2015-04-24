@@ -1,0 +1,19 @@
+from django.shortcuts import render_to_response
+
+# Create your views here.
+
+def blog_req(request):
+ name=request.GET.get('name','')
+ text = request.GET.get('msg','')
+ f_t=request.FILES.get('fl','')
+ n=''
+ f_tm=f_t
+ f_msg=open('msg.odt','r')
+ m1=f_msg.read()
+ m=m1.split('\n')
+ if text:
+  f_msg=open('msg.odt','w')
+  f_msg.write(m1+'\n'+name+':'+text)
+  m.append('\n'+name+":"+text)
+  print(f_tm)
+ return render_to_response('blog.html',{"msg":m})

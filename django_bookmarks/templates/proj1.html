@@ -1,0 +1,64 @@
+
+    {% extends "proj2.html" %}
+    {% autoescape on %}    
+    {% block reg_user %}
+       <form action="" method="POST">{% csrf_token %}
+            <h1>Register Here</h1>
+                
+            {{ form.name }}
+            {% if er %}
+            <div class="alert alert-danger text-center" role="alert">
+            
+                
+                {{er}}
+            
+            </div>    
+            {% endif %}
+            
+        
+            {% if form.name.errors %}
+                <div class="alert alert-danger text-center" role="alert">
+                {{ form.name.errors }}
+                </div>
+            {% endif %}
+            <br/>
+            {{ form.password}}
+        
+            {% if form.password.errors%}
+                <div class="alert alert-danger text-center" role="alert">
+                {{form.password.errors}}
+                </div>
+            {% endif %}
+        <br/>
+            {{form.password2}}
+            
+            {% if form.password2.errors%}    
+                <div class="alert alert-danger text-center" role="alert">
+                {{form.password2.errors}}
+                </div>
+            {% endif %}
+            <br/>
+            {% if not success_submit %}
+                <input type='submit' name="reg" value="register me &raquo" class="btn btn-primary">
+            
+            {% else %}
+                <div class="alert alert-success text-center" role="alert">
+                You have registered Succesfully!
+                </div>
+            {% endif %}
+        </form>
+    {% endblock %}
+    
+    {% block log_user %}
+        
+        {{ login_form.name2 }}
+        {{ login_form.password3 }}
+        
+        <input type="submit" name="log" value="Login" class="btn btn-success" id="btn1">
+            
+    {% endblock %}
+    
+    {% block log_failed %}
+    {{ err }}
+    {% endblock %}
+{% endautoescape %}

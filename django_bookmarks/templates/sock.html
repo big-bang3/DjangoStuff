@@ -1,0 +1,11 @@
+<html>
+<body>
+<form action = '' method = "POST" >{% csrf_token %}
+Enter port Number : <input type = "text" name = "port">
+<br>
+Enter the text : <input type = "text" name ="message" >
+<input type = "submit" value = "send message">
+</form>
+{{ message }}
+</body>
+</html>
